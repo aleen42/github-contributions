@@ -1,6 +1,6 @@
 {
   "name": "gh-contributions",
-  "version": "2.2.1",
+  "version": "3.0.0",
   "description": "A tool that generates a repository which being pushed into your GitHub account creates a nice contributions calendar.",
   "main": "lib/server.js",
   "repository": {
@@ -14,7 +14,7 @@
   ],
   "bin": "./lib/server.js",
   "scripts": {
-    "start": "./lib/server.js"
+    "start": "node ./lib/server.js"
   },
   "author": "Ionică Bizău <bizauionica@gmail.com> (http://ionicabizau.net)",
   "contributors": [
@@ -34,7 +34,6 @@
   "homepage": "https://github.com/IonicaBizau/github-contributions",
   "devDependencies": {},
   "dependencies": {
-    "archiver": "^0.14.2",
     "gry": "^4.0.0",
     "lien": "0.0.11",
     "socket.io": "^1.1.0",
@@ -104,6 +103,33 @@
           "The server runs on the `9000` port. Open `http://localhost:9000/` in your browser.",
           "Check the help information on the app page (`http://localhost:9000`), after you start the app."
         ]
+      },
+      {
+        "h3": "Running Server Inside Docker Container"
+      },
+      {
+        "p": "**You will need to use a version lower than `3.0.0` to run this in Docker. Currently this is not supported anymore.**"
+      },
+      {
+        "p": "Build Docker container locally:"
+      },
+      {
+        "code": {
+          "language": "sh",
+          "content": "docker build -t github-contributions ."
+        }
+      },
+      {
+        "p": "Start Docker container:"
+      },
+      {
+        "code": {
+          "language": "sh",
+          "content": "docker run --rm -it -p 127.0.0.1:9000:9000 --name=github-contributions-server github-contributions"
+        }
+      },
+      {
+        "p": "Open `http://localhost:9000/` in your browser."
       }
     ]
   }
